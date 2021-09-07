@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit GestionRegistro{% endblock %}
+
+{% block body %}
+    <h1>Edit GestionRegistro</h1>
+
+    {{ include('gestion_registro/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('gestion_registro_index') }}">back to list</a>
+
+    {{ include('gestion_registro/_delete_form.html.twig') }}
+{% endblock %}

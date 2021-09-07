@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GestionRegistro{% endblock %}
+
+{% block body %}
+    <h1>GestionRegistro</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ gestion_registro.id }}</td>
+            </tr>
+            <tr>
+                <th>Chequeo</th>
+                <td>{{ gestion_registro.chequeo ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Mk</th>
+                <td>{{ gestion_registro.mk ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>IdInterfaz</th>
+                <td>{{ gestion_registro.idInterfaz ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>IdLote</th>
+                <td>{{ gestion_registro.idLote }}</td>
+            </tr>
+            <tr>
+                <th>IdControl</th>
+                <td>{{ gestion_registro.idControl }}</td>
+            </tr>
+            <tr>
+                <th>FechaIngreso</th>
+                <td>{{ gestion_registro.fechaIngreso ? gestion_registro.fechaIngreso|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>FechaLm</th>
+                <td>{{ gestion_registro.fechaLm ? gestion_registro.fechaLm|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Importe</th>
+                <td>{{ gestion_registro.importe }}</td>
+            </tr>
+            <tr>
+                <th>IdControl1</th>
+                <td>{{ gestion_registro.idControl1 }}</td>
+            </tr>
+            <tr>
+                <th>IdControl2</th>
+                <td>{{ gestion_registro.idControl2 }}</td>
+            </tr>
+            <tr>
+                <th>FechaControl1</th>
+                <td>{{ gestion_registro.fechaControl1 ? gestion_registro.fechaControl1|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Notas</th>
+                <td>{{ gestion_registro.notas }}</td>
+            </tr>
+            <tr>
+                <th>Observaciones</th>
+                <td>{{ gestion_registro.observaciones }}</td>
+            </tr>
+            <tr>
+                <th>FechaRegistro</th>
+                <td>{{ gestion_registro.fechaRegistro ? gestion_registro.fechaRegistro|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>FechaActualizacion</th>
+                <td>{{ gestion_registro.fechaActualizacion ? gestion_registro.fechaActualizacion|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>MarcaBanco</th>
+                <td>{{ gestion_registro.marcaBanco }}</td>
+            </tr>
+            <tr>
+                <th>NumBatch</th>
+                <td>{{ gestion_registro.numBatch }}</td>
+            </tr>
+            <tr>
+                <th>NumDocumento</th>
+                <td>{{ gestion_registro.numDocumento }}</td>
+            </tr>
+            <tr>
+                <th>Bloqueo</th>
+                <td>{{ gestion_registro.bloqueo }}</td>
+            </tr>
+            <tr>
+                <th>FormaId</th>
+                <td>{{ gestion_registro.formaId }}</td>
+            </tr>
+            <tr>
+                <th>AuxiliarId</th>
+                <td>{{ gestion_registro.auxiliarId }}</td>
+            </tr>
+            <tr>
+                <th>UsuarioId</th>
+                <td>{{ gestion_registro.usuarioId }}</td>
+            </tr>
+            <tr>
+                <th>SecuenciaRegistroId</th>
+                <td>{{ gestion_registro.secuenciaRegistroId }}</td>
+            </tr>
+            <tr>
+                <th>CuentaId</th>
+                <td>{{ gestion_registro.cuentaId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('gestion_registro_index') }}">back to list</a>
+
+    <a href="{{ path('gestion_registro_edit', {'id': gestion_registro.id}) }}">edit</a>
+
+    {{ include('gestion_registro/_delete_form.html.twig') }}
+{% endblock %}

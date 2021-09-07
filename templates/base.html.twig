@@ -14,6 +14,18 @@
         {% endblock %}
     </head>
     <body>
+        <header>
+             <div class="navegador">
+                <nav class="nav flex-column">
+                    <h3><a class="nav-link disabled" >Comfamiliar Risaralda </a></h3>
+                    <a class="nav-link disabled" >Modulos</a>
+                    <a class="nav-link"  href="{{ path('gestion_registro_index') }}"> Gestion y Control </a>                          
+                </nav>
+            </div>
+            <div class="nav_two" align="right">
+            </div>
+            <hr />
+        </header>
         {% block body %}{% endblock %}
     </body>
 </html>

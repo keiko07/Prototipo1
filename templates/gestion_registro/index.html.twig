@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GestionRegistro{% endblock %}
+
+{% block body %}
+    <h1>Gestion de registros </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FechaIngreso</th>
+                <th>FechaLm</th>
+                <th>Importe</th>
+                <th>FechaRegistro</th>
+                <th>FechaActualizacion</th>
+                <th>Forma</th>
+                <th>Auxiliar</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gestion_registro in gestion_registros %}
+            <tr>
+                <td>{{ gestion_registro.id }}</td>
+                <td>{{ gestion_registro.fechaIngreso ? gestion_registro.fechaIngreso|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ gestion_registro.fechaLm ? gestion_registro.fechaLm|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ gestion_registro.importe }}</td>
+                <td>{{ gestion_registro.fechaRegistro ? gestion_registro.fechaRegistro|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ gestion_registro.fechaActualizacion ? gestion_registro.fechaActualizacion|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ gestion_registro.forma }}</td>
+                <td>{{ gestion_registro.auxiliar }}</td>
+                <td>
+                    <a href="{{ path('gestion_registro_show', {'id': gestion_registro.id}) }}">show</a>
+                    <a href="{{ path('gestion_registro_edit', {'id': gestion_registro.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="26">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('gestion_registro_new') }}">Create new</a>
+{% endblock %}

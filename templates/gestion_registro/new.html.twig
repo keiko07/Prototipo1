@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New GestionRegistro{% endblock %}
+
+{% block body %}
+    <h1>Create new GestionRegistro</h1>
+
+    {{ include('gestion_registro/_form.html.twig') }}
+
+    <a href="{{ path('gestion_registro_index') }}">back to list</a>
+{% endblock %}
