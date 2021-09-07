@@ -1,0 +1,3 @@
+#index:
+#    path: /lucky
+#    controller: App\Controller\LuckyController::number
